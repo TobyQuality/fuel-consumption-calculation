@@ -33,14 +33,16 @@ public class Main {
         final double descentConsumptionBelowFiveK = 5.0 / 5000;
         // if the plane is ascending
         if (startingHeight < finalHeight) {
-            if (startingHeight < finalHeight) {
-                if (startingHeight < 5000) {
-                    final int belowFiveThousandConsumption = (int) (climbConsumptionBelowFiveK * (5000 - startingHeight));
-                    final int aboveFiveThousandConsumption = (int) (climbConsumptionAboveFiveK * (finalHeight - 5000));
-                    return belowFiveThousandConsumption + aboveFiveThousandConsumption;
-                } else {
-                    return (int) (climbConsumptionAboveFiveK * (finalHeight - 5000));
+            if (startingHeight < 5000) {
+                if (finalHeight < 5000) {
+                    return (int) (climbConsumptionBelowFiveK * (finalHeight - startingHeight));
                 }
+                final int belowFiveThousandConsumption = (int) (climbConsumptionBelowFiveK
+                        * (5000 - startingHeight));
+                final int aboveFiveThousandConsumption = (int) (climbConsumptionAboveFiveK * (finalHeight - 5000));
+                return belowFiveThousandConsumption + aboveFiveThousandConsumption;
+            } else {gi
+                return (int) (climbConsumptionAboveFiveK * (finalHeight - 5000));
             }
         }
         // if the plane is descending
