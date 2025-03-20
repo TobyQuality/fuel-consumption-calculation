@@ -1,3 +1,5 @@
+package org.example;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -5,35 +7,17 @@ import java.io.IOException;
 import java.util.TreeMap;
 
 public class Main {
-
-    // public TreeMap<Integer, Integer> loadFuelData(String filename) {
-    // TreeMap<Integer, Integer> fuelMap = new TreeMap<>();
-
-    // try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-    // String line;
-    // while ((line = br.readLine()) != null) {
-    // String[] parts = line.split(",");
-    // if (parts.length == 2) {
-    // int altitude = Integer.parseInt(parts[0].trim());
-    // int fuel = Integer.parseInt(parts[1].trim());
-    // fuelMap.put(altitude, fuel);
-    // }
-    // }
-    // } catch (IOException e) {
-    // System.err.println("Error reading file: " + e.getMessage());
-    // }
-
-    // return fuelMap;
-    // }
-
-        /**
-     * Calculates the fuel consumption based on altitude changes during ascent or descent.
+    /**
+     * Calculates the fuel consumption based on altitude changes during ascent or
+     * descent.
      * 
      * @param startingHeight The initial altitude in feet.
      * @param finalHeight    The final altitude in feet.
      * @return The amount of fuel consumed during the altitude change.
-     */    /**
-     * Calculates the fuel consumption based on altitude changes during ascent or descent.
+     */
+    /**
+     * Calculates the fuel consumption based on altitude changes during ascent or
+     * descent.
      * 
      * @param startingHeight The initial altitude in feet.
      * @param finalHeight    The final altitude in feet.
@@ -177,4 +161,25 @@ public class Main {
         System.out.println("The fuel consumption is: " + fuelConsumptionCalculation);
     }
 
+    
+    
+    // public TreeMap<Integer, Integer> loadFuelData(String filename) {
+    // TreeMap<Integer, Integer> fuelMap = new TreeMap<>();
+
+    // try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+    // String line;
+    // while ((line = br.readLine()) != null) {
+    // String[] parts = line.split(",");
+    // if (parts.length == 2) {
+    // int altitude = Integer.parseInt(parts[0].trim());
+    // int fuel = Integer.parseInt(parts[1].trim());
+    // fuelMap.put(altitude, fuel);
+    // }
+    // }
+    // } catch (IOException e) {
+    // System.err.println("Error reading file: " + e.getMessage());
+    // }
+
+    // return fuelMap;
+    // }
 }

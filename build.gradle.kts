@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("application") // Add this line
 }
 
 group = "org.example"
@@ -16,4 +17,9 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+// Define the main class for running the application
+application {
+    mainClass.set("org.example.Main") // Change to your actual main class
 }
