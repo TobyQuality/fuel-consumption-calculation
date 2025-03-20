@@ -41,7 +41,7 @@ public class Main {
                         * (5000 - startingHeight));
                 final int aboveFiveThousandConsumption = (int) (climbConsumptionAboveFiveK * (finalHeight - 5000));
                 return belowFiveThousandConsumption + aboveFiveThousandConsumption;
-            } else {gi
+            } else {
                 return (int) (climbConsumptionAboveFiveK * (finalHeight - 5000));
             }
         }
