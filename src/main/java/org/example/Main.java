@@ -24,20 +24,19 @@ public class Main {
      * @return The amount of fuel consumed during the altitude change.
      */
     public static int calculate(int startingHeight, int finalHeight) {
-        // Have to resort to "magical numbers"
-        double climbConsumptionBelowFiveK = 280.0 / 5000;
-        double climbConsumptionAboveFiveK = 90.0 / 5000;
-        double descentConsumptionAboveTwentyK = 20.0 / 5000;
-        double descentConsumptionFromTwentyKtoFifteenK = 30.0 / 5000;
-        double descentConsumptionFromFifteenKtoTenK = 20.0 / 5000;
-        double descentConsumptionFromTenKtoFiveK = 15.0 / 5000;
-        double descentConsumptionBelowFiveK = 5.0 / 5000;
+        final double climbConsumptionBelowFiveK = 280.0 / 5000;
+        final double climbConsumptionAboveFiveK = 90.0 / 5000;
+        final double descentConsumptionAboveTwentyK = 20.0 / 5000;
+        final double descentConsumptionFromTwentyKtoFifteenK = 30.0 / 5000;
+        final double descentConsumptionFromFifteenKtoTenK = 20.0 / 5000;
+        final double descentConsumptionFromTenKtoFiveK = 15.0 / 5000;
+        final double descentConsumptionBelowFiveK = 5.0 / 5000;
         // if the plane is ascending
         if (startingHeight < finalHeight) {
             if (startingHeight < finalHeight) {
                 if (startingHeight < 5000) {
-                    int belowFiveThousandConsumption = (int) (climbConsumptionBelowFiveK * (5000 - startingHeight));
-                    int aboveFiveThousandConsumption = (int) (climbConsumptionAboveFiveK * (finalHeight - 5000));
+                    final int belowFiveThousandConsumption = (int) (climbConsumptionBelowFiveK * (5000 - startingHeight));
+                    final int aboveFiveThousandConsumption = (int) (climbConsumptionAboveFiveK * (finalHeight - 5000));
                     return belowFiveThousandConsumption + aboveFiveThousandConsumption;
                 } else {
                     return (int) (climbConsumptionAboveFiveK * (finalHeight - 5000));
@@ -50,7 +49,7 @@ public class Main {
 
             if (startingHeight < 5000) {
                 if (finalHeight < 0) {
-                    int finalHeightToPositive = Math.abs(finalHeight);
+                    final int finalHeightToPositive = Math.abs(finalHeight);
                     calculateDescentFuelConsumption += (int) (descentConsumptionBelowFiveK *
                             finalHeightToPositive);
                     calculateDescentFuelConsumption += (int) (descentConsumptionBelowFiveK * startingHeight);
@@ -121,7 +120,7 @@ public class Main {
                 }
             }
             if (finalHeight < 0) {
-                int finalHeightToPositive = Math.abs(finalHeight);
+                final int finalHeightToPositive = Math.abs(finalHeight);
                 calculateDescentFuelConsumption += (int) (descentConsumptionBelowFiveK *
                         finalHeightToPositive);
                 calculateDescentFuelConsumption += (int) (descentConsumptionBelowFiveK * 5000);
@@ -157,12 +156,10 @@ public class Main {
         } catch (NumberFormatException e) {
             System.out.println("Give numbers representing feet as parameters!");
         }
-        int fuelConsumptionCalculation = calculate(startingHeight, finalHeight);
+        final int fuelConsumptionCalculation = calculate(startingHeight, finalHeight);
         System.out.println("The fuel consumption is: " + fuelConsumptionCalculation);
     }
 
-    
-    
     // public TreeMap<Integer, Integer> loadFuelData(String filename) {
     // TreeMap<Integer, Integer> fuelMap = new TreeMap<>();
 

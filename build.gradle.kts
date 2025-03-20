@@ -1,6 +1,12 @@
 plugins {
     id("java")
-    id("application") // Add this line
+    id("application")
+    id("checkstyle")
+}
+
+checkstyle {
+    toolVersion = "10.12.3"
+    configFile = file("config/checkstyle/checkstyle.xml")
 }
 
 group = "org.example"
